@@ -1,7 +1,7 @@
 package pancake_house
 
 import (
-	item "github.com/MGYOSBEL/design-patterns/iterator/menu_item"
+	item "github.com/MGYOSBEL/design-patterns/menu_item"
 )
 
 type PancakeHouseMenu struct {

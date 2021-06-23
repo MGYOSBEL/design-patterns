@@ -3,7 +3,7 @@ package diner
 import (
 	"fmt"
 
-	item "github.com/MGYOSBEL/design-patterns/iterator/menu_item"
+	item "github.com/MGYOSBEL/design-patterns/menu_item"
 )
 
 const MAX_ITEMS = 6
