@@ -1,4 +1,4 @@
-package menu_item
+package menu
 
 type MenuItem struct {
 	name        string
@@ -22,7 +22,7 @@ func (item *MenuItem) GetName() string {
 func (item *MenuItem) GetDescription() string {
 	return item.description
 }
-func (item *MenuItem) GetProce() float64 {
+func (item *MenuItem) GetPrice() float64 {
 	return item.price
 }
 func (item *MenuItem) IsVegetarian() bool {
