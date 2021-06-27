@@ -8,19 +8,22 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello")
 	pancakeMenu := pancake.InitPancakeHouseMenu()
 	pancakeItems := pancakeMenu.GetMenuItems()
 
-	for item := range pancakeItems {
-		fmt.Printf("%s -- %f -- %s", item.GetName(), item.GetPrice(), item.GetDescription())
+	fmt.Println("-----PANCAKE HOUSE MENU-----")
+	for _, item := range pancakeItems {
+		fmt.Printf("%s -- %v -- %s\n", item.GetName(), item.GetPrice(), item.GetDescription())
 	}
+	fmt.Println("")
 
 	dinerMenu := diner.InitDinerMenu()
 	dinerItems := dinerMenu.GetMenuItems()
 
-	for item := range dinerItems {
-		fmt.Printf("%s -- %f -- %s", item.GetName(), item.GetPrice(), item.GetDescription())
+	fmt.Println("-----DINER MENU-----")
+	for i := 0; i < dinerMenu.GetNumberOfItems(); i++ {
+		fmt.Printf("%s -- %v -- %s\n", dinerItems[i].GetName(), dinerItems[i].GetPrice(), dinerItems[i].GetDescription())
 	}
+	fmt.Println("")
 
 }

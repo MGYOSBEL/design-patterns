@@ -9,17 +9,17 @@ type PancakeHouseMenu struct {
 }
 
 func NewPancakeHouseMenu() *PancakeHouseMenu {
-	menuItems := make([]*menu.MenuItem, 10)
+	menuItems := make([]*menu.MenuItem, 0)
 
 	return &PancakeHouseMenu{
 		menuItems: menuItems,
 	}
 }
 
-func (menu *PancakeHouseMenu) AddItem(name string, description string, vegetarian bool, price float64) {
+func (diner *PancakeHouseMenu) AddItem(name string, description string, vegetarian bool, price float64) {
 	itm := menu.NewMenuItem(name, description, vegetarian, price)
 
-	menu.menuItems = append(menu.menuItems, itm)
+	diner.menuItems = append(diner.menuItems, itm)
 }
 
 func (menu *PancakeHouseMenu) GetMenuItems() []*menu.MenuItem {

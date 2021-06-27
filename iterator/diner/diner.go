@@ -21,17 +21,22 @@ func NewDinerMenu() *DinerMenu {
 	}
 }
 
-func (menu *DinerMenu) AddItem(name string, description string, vegetarian bool, price float64) {
-	if menu.numberOfItems == MAX_ITEMS {
+func (diner *DinerMenu) AddItem(name string, description string, vegetarian bool, price float64) {
+	if diner.numberOfItems == MAX_ITEMS {
 		fmt.Println("Max Number of items reached. Can't be added more items.")
 	} else {
 		itm := menu.NewMenuItem(name, description, vegetarian, price)
-		menu.menuItems[menu.numberOfItems] = itm
+		diner.menuItems[diner.numberOfItems] = itm
+		diner.numberOfItems++
 	}
 }
 
 func (menu *DinerMenu) GetMenuItems() [MAX_ITEMS]*menu.MenuItem {
 	return menu.menuItems
+}
+
+func (menu *DinerMenu) GetNumberOfItems() int {
+	return menu.numberOfItems
 }
 
 func InitDinerMenu() *DinerMenu {

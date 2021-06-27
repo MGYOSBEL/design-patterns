@@ -1,3 +1,3 @@
-module github.com/design-patterns/iterator
+module github.com/MGYOSBEL/design-patterns/iterator
 
 go 1.15
