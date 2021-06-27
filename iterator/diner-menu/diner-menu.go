@@ -3,7 +3,7 @@ package diner
 import (
 	"fmt"
 
-	item "github.com/MGYOSBEL/design-patterns/menu_item"
+	item "github.com/MGYOSBEL/design-patterns/iterator/menu-item"
 )
 
 const MAX_ITEMS = 6
@@ -25,8 +25,8 @@ func (menu *DinerMenu) AddItem(name string, description string, vegetarian bool,
 	if menu.numberOfItems == MAX_ITEMS {
 		fmt.Println("Max Number of items reached. Can't be added more items.")
 	} else {
-		itm := item.NewItem(name, description, vegetarian, price)
-		menu.menuItems[menu.numberOfItems] = &itm
+		itm := item.NewMenuItem(name, description, vegetarian, price)
+		menu.menuItems[menu.numberOfItems] = itm
 	}
 }
 

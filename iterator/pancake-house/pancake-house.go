@@ -1,7 +1,7 @@
 package pancake_house
 
 import (
-	item "github.com/MGYOSBEL/design-patterns/menu_item"
+	item "github.com/MGYOSBEL/design-patterns/iterator/menu-item"
 )
 
 type PancakeHouseMenu struct {
@@ -9,7 +9,7 @@ type PancakeHouseMenu struct {
 }
 
 func NewPancakeHouseMenu() *PancakeHouseMenu {
-	menuItems := make(item.MenuItem, 10)
+	menuItems := make([]*item.MenuItem, 10)
 
 	return &PancakeHouseMenu{
 		menuItems: menuItems,
