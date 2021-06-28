@@ -4,26 +4,29 @@ import (
 	"fmt"
 
 	"github.com/MGYOSBEL/design-patterns/iterator/diner"
+	"github.com/MGYOSBEL/design-patterns/iterator/iterator"
 	"github.com/MGYOSBEL/design-patterns/iterator/pancake"
 )
 
 func main() {
 	pancakeMenu := pancake.InitPancakeHouseMenu()
-	pancakeItems := pancakeMenu.GetMenuItems()
+	pancakeIterator := pancakeMenu.CreateIterator()
 
-	fmt.Println("-----PANCAKE HOUSE MENU-----")
-	for _, item := range pancakeItems {
-		fmt.Printf("%s \t-- %v \t -- %s\n", item.GetName(), item.GetPrice(), item.GetDescription())
-	}
-	fmt.Println("")
+	fmt.Printf("%60s\n", "----- PANCAKE MENU -----")
+	printMenu(pancakeIterator)
 
 	dinerMenu := diner.InitDinerMenu()
-	dinerItems := dinerMenu.GetMenuItems()
+	dinerIterator := dinerMenu.CreateIterator()
 
-	fmt.Println("-----DINER MENU-----")
-	for i := 0; i < dinerMenu.GetNumberOfItems(); i++ {
-		fmt.Printf("%s \t-- %v \t -- %s\n", dinerItems[i].GetName(), dinerItems[i].GetPrice(), dinerItems[i].GetDescription())
+	fmt.Printf("%60s\n", "----- DINER MENU -----")
+	printMenu(dinerIterator)
+
+}
+
+func printMenu(it iterator.Iterator) {
+	for it.HasNext() {
+		item := it.Next()
+		fmt.Printf("%30s \t-- %v \t -- %s\n", item.GetName(), item.GetPrice(), item.GetDescription())
 	}
-	fmt.Println("")
-
+	fmt.Println("\v")
 }

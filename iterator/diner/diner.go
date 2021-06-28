@@ -3,6 +3,7 @@ package diner
 import (
 	"fmt"
 
+	"github.com/MGYOSBEL/design-patterns/iterator/iterator"
 	"github.com/MGYOSBEL/design-patterns/iterator/menu"
 )
 
@@ -37,6 +38,10 @@ func (menu *DinerMenu) GetMenuItems() [MAX_ITEMS]*menu.MenuItem {
 
 func (menu *DinerMenu) GetNumberOfItems() int {
 	return menu.numberOfItems
+}
+
+func (menu *DinerMenu) CreateIterator() iterator.Iterator {
+	return NewDinerMenuIterator(menu.menuItems)
 }
 
 func InitDinerMenu() *DinerMenu {

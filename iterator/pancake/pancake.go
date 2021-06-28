@@ -1,6 +1,7 @@
 package pancake
 
 import (
+	"github.com/MGYOSBEL/design-patterns/iterator/iterator"
 	"github.com/MGYOSBEL/design-patterns/iterator/menu"
 )
 
@@ -24,6 +25,10 @@ func (diner *PancakeHouseMenu) AddItem(name string, description string, vegetari
 
 func (menu *PancakeHouseMenu) GetMenuItems() []*menu.MenuItem {
 	return menu.menuItems
+}
+
+func (menu *PancakeHouseMenu) CreateIterator() iterator.Iterator {
+	return NewPancakeMenuIterator(menu.menuItems)
 }
 
 func InitPancakeHouseMenu() *PancakeHouseMenu {
